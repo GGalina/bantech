@@ -1,17 +1,22 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import store from './redux/store';
+import { BrowserRouter } from "react-router-dom";
+import { App } from './components/App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import './assets/fonts/Roboto/Roboto-Black.ttf';
+import './assets/fonts/Roboto/Roboto-Bold.ttf';
+import './assets/fonts/Roboto/Roboto-Light.ttf';
+import './assets/fonts/Roboto/Roboto-Medium.ttf';
+import './assets/fonts/Roboto/Roboto-Regular.ttf';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter basename='/bantech'>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
+
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
