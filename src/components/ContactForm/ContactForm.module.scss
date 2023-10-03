@@ -1,0 +1,188 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/vars';
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: local("Roboto-Bold"),
+        url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: local("Roboto-Medium"),
+        url("../../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: local("Roboto-Regular"),
+        url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+.Container {
+    @include container;
+}
+
+.Image {
+    background-color: #b3b3b3;
+    width: 100%;
+    height: 200px;
+}
+
+.Banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px 0;
+
+    @include tablet {
+        padding: 45px 0;
+    }
+
+    @include desktop {
+        padding: 45px 0;
+    }
+}
+
+.Header {
+    font-family: "Roboto-Bold";
+    font-size: 24px;
+    color: $accent-color;
+}
+
+.Desc {
+    font-family: "Roboto-Medium";
+    font-size: 16px;
+    color: $main-color;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 45px;
+
+    @include tablet {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.InputContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: solid 2px #b3b3b3;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:focus-within {
+        border-color: $accent-color;
+    }
+}
+
+.InputContainerText {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border: solid 2px #b3b3b3;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:focus-within {
+        border-color: $accent-color;
+    }
+}
+
+.Icon {
+    color: #b3b3b3;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.Input {
+    font-family: "Roboto-Regular";
+    font-size: 16px;
+    color: $main-color;
+    border: none;
+    flex-grow: 1;
+    min-width: 0;
+    outline: none;
+}
+
+.InputText {
+    font-family: "Roboto-Regular";
+    font-size: 16px;
+    color: $main-color;
+    min-height: 100px;
+    max-height: 150px;
+    border: none;
+    flex-grow: 1;
+    min-width: 0;
+    outline: none;
+    overflow: auto;
+}
+
+.Button {
+    font-family: "Roboto-Medium";
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: $accent-color;
+    color: $main-white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $accent-hover;
+    }
+}
+.Disabled {
+    background-color: $main-color;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $accent-color;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $accent-color;
+}
+
+/* Add styles for error messages */
+.Error {
+    font-family: "Roboto-Regular";
+    font-size: 14px;
+    color: $main-red;
+    margin-top: 5px;
+    /* Position error message below the input */
+    position: absolute;
+    bottom: -20px;
+}
+
+/* Style for red border when error occurs */
+.ErrorBorder {
+    border-color: $main-red;
+}
